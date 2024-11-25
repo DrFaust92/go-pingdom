@@ -221,6 +221,7 @@ func (ck *PingCheck) PutParams() map[string]string {
 		"notifyagainevery": strconv.Itoa(ck.NotifyAgainEvery),
 		"notifywhenbackup": strconv.FormatBool(ck.NotifyWhenBackup),
 		"paused":           strconv.FormatBool(ck.Paused),
+		"tags":             ck.Tags,
 		"probe_filters":    ck.ProbeFilters,
 		"teamids":          intListToCDString(ck.TeamIds),
 		"userids":          intListToCDString(ck.UserIds),

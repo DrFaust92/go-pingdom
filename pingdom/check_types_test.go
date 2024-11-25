@@ -183,6 +183,7 @@ func TestPingCheckPostParams(t *testing.T) {
 		IntegrationIds:        []int{33333333, 44444444},
 		UserIds:               []int{123, 456},
 		TeamIds:               []int{789},
+		Tags:                  "tags,is,what,we,want",
 		ResponseTimeThreshold: 2300,
 	}
 	want := map[string]string{
@@ -195,6 +196,7 @@ func TestPingCheckPostParams(t *testing.T) {
 		"integrationids":         "33333333,44444444",
 		"userids":                "123,456",
 		"teamids":                "789",
+		"tags":                   "tags,is,what,we,want",
 		"responsetime_threshold": "2300",
 	}
 
@@ -209,6 +211,7 @@ func TestPingCheckPutParams(t *testing.T) {
 		IntegrationIds: []int{33333333, 44444444},
 		UserIds:        []int{123, 456},
 		TeamIds:        []int{789},
+		Tags:           "we,want,tags",
 		Resolution:     5,
 	}
 	want := map[string]string{
@@ -220,6 +223,7 @@ func TestPingCheckPutParams(t *testing.T) {
 		"notifywhenbackup": "false",
 		"integrationids":   "33333333,44444444",
 		"probe_filters":    "",
+		"tags":             "we,want,tags",
 		"userids":          "123,456",
 		"teamids":          "789",
 	}
@@ -423,7 +427,6 @@ func TestSummaryPerformanceRequestValid(t *testing.T) {
 			Id:         123,
 			Resolution: "month",
 		}.Valid())
-
 	})
 }
 
